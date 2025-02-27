@@ -2,8 +2,21 @@ from uuid import UUID
 from typing import List
 from fastapi import FastAPI, HTTPException
 from models import User, Gender, Role, UserUpdateRequest
+from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI()
+
+app.mount("/userlist", StaticFiles(directory="frontend", html=True), name="frontend")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 db: List[User] = [
     User(
@@ -29,7 +42,7 @@ async def root():
 
 @app.get("/api/v1/users")
 async def fetch_users():
-    return db;
+    return db
 
 @app.post("/api/v1/users")
 async def register_user(user: User):

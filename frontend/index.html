@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Usuários</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loading-spinner" class="spinner" style="display:none;"></div>
+    <div id="overlay" style="display: none;"></div>
+
+<div class="container">
+    <div class="left-column"></div>
+
+
+    <div class="right-column"></div>
+
+    <div class="content">
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Pesquisar usuários">
+        </div>
+    <h1>Lista de Usuários</h1>
+    <ul id="user-list"></ul>
+    <h2>Adicionar Usuário</h2>
+    <form id="user-form">
+        <input type="text" id="first_name" placeholder="Nome" required>
+        <input type="text" id="last_name" placeholder="Sobrenome" required>
+        <select id="gender">
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+        </select>
+        <button type="submit" class="bg-blue-500 text-white p-2 rounded">Adicionar</button>
+    </form>
+
+    <h2>Atualizar Usuário</h2>
+    <form id="update-user-form" style="display:none;">
+        <input type="text" id="update-first_name" placeholder="Nome" required>
+        <input type="text" id="update-last_name" placeholder="Sobrenome" required>
+        <select id="update-gender">
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+        </select>
+        <button type="submit">Atualizar</button>
+    </form>
+    </div>
+</div>    
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
