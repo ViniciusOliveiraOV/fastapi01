@@ -86,13 +86,13 @@ async function deleteUser(userId) {
 const loadingSpinner = document.getElementById('loading-spinner');
 const overlay = document.getElementById('overlay');
 
-// Show spinner before fetching data
+// Carregamento efeito
 function showSpinner() {
     loadingSpinner.style.display = 'block';
     overlay.style.display = 'block';
 }
 
-// Hide spinner after fetching data
+// Carregamento efeito ocultar
 function hideSpinner() {
     setTimeout(() => {
         loadingSpinner.style.display = 'none';
@@ -101,7 +101,7 @@ function hideSpinner() {
 }
 
 
-// Example: Fetch Users and show/hide the spinner
+
 async function fetchUsers() {
     showSpinner(); // Show spinner when starting the fetch
 
@@ -137,7 +137,7 @@ async function fetchUsers() {
     } catch (error) {
         console.error("Error fetching users:", error);
     } finally {
-        hideSpinner(); // Hide spinner after the fetch is complete
+        hideSpinner();
     }
 }
 
@@ -152,5 +152,5 @@ document.getElementById("search-input").addEventListener("input", function() {
     });
 });
 
-// Inicializar lista de usuários 
+
 fetchUsers()
